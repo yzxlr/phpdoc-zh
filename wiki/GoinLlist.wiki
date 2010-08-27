@@ -8,7 +8,7 @@
 
 = 认领列表 =
 {{{
- 蜗牛(QQ:49364332/)  2010-08-25 23:17:23
+ 蜗牛(QQ:49364332/blakcuttlefish)  2010-08-25 23:17:23
  http://docs.php.net/manual/zh/book.mongo.php （9月底）
  
  废墟/Coeus(QQ:6652898/r.anerg) 2010-08-25 23:17:35
