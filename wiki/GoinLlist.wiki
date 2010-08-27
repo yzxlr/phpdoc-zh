@@ -23,5 +23,5 @@
  崔玉松(QQ:376062434/cuimuxi)  2008-08-26 17:02:39
  http://docs.php.net/manual/zh/book.apc.php
  
- diogin(QQ:12394502)  2008-08-26 17:05:10
+ diogin(QQ:12394502/diogin)  2008-08-26 17:05:10
  http://docs.php.net/manual/zh/migration53.php
