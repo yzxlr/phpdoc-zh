@@ -26,5 +26,5 @@
  diogin(QQ:12394502/diogin)  2008-08-26 17:05:10
  http://docs.php.net/manual/zh/migration53.php
 
- Fising(QQ:397334114/tor.browse.bridge)  2008-08-27 15:41:52
+ Fising(QQ:397334114/tor.browser.bridge)  2008-08-27 15:41:52
  http://docs.php.net/manual/zh/reserved.variables.php
