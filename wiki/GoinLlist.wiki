@@ -31,4 +31,11 @@
 
  ligang wang(/suppersoft) 2010-08-27 13:52
  http://docs.php.net/manual/zh/features.gc.refcounting-basics.php （预计两周）
+
+ 张博(/arrbo at 163.com) 2010-08-27 16:31 （预计十天）
+ http://docs.php.net/manual/zh/class.swfaction.php
+ http://docs.php.net/manual/zh/class.swfbitmap.php
+ http://docs.php.net/manual/zh/class.swfbutton.php
+ 
+
 }}}
