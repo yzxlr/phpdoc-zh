@@ -8,20 +8,20 @@
 
 = 认领列表 =
 
- 蜗牛(49364332)  2008-08-25 23:17:23
+ 蜗牛(QQ:49364332)  2008-08-25 23:17:23
  http://docs.php.net/manual/zh/book.mongo.php （9月底）
  
- 废墟/Coeus(6652898) 2008-08-25 23:17:35
+ 废墟/Coeus(QQ:6652898) 2008-08-25 23:17:35
  http://docs.php.net/manual/zh/language.types.string.php
  
- 胜邪(16376529)  2008-08-25 23:25:56
+ 胜邪(QQ:16376529)  2008-08-25 23:25:56
  http://docs.php.net/manual/zh/memcache.addserver.php
  
- 朝沐金风(79194034)  2008-08-25 0:01:02
+ 朝沐金风(QQ:79194034)  2008-08-25 0:01:02
  http://docs.php.net/manual/zh/book.curl.php
  
- 崔玉松(376062434)  2008-08-26 17:02:39
+ 崔玉松(QQ:376062434)  2008-08-26 17:02:39
  http://docs.php.net/manual/zh/book.apc.php
  
- diogin(12394502)  2008-08-26 17:05:10
+ diogin(QQ:12394502)  2008-08-26 17:05:10
  http://docs.php.net/manual/zh/migration53.php
