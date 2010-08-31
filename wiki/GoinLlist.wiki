@@ -27,7 +27,8 @@
  http://docs.php.net/manual/zh/migration53.php
 
  Fising(QQ:397334114/tor.browser.bridge)  2010-08-27 15:41:52
- http://docs.php.net/manual/zh/reserved.variables.php
+ http://docs.php.net/manual/zh/reserved.variables.php（提交）
+ http://docs.php.net/manual/zh/language.variables.superglobals.php
 
  ligang wang(/suppersoft) 2010-08-27 13:52
  http://docs.php.net/manual/zh/features.gc.refcounting-basics.php （预计两周）
