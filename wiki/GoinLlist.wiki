@@ -37,5 +37,8 @@
  http://docs.php.net/manual/zh/class.swfbitmap.php
  http://docs.php.net/manual/zh/class.swfbutton.php
  
-
+ 刘松(QQ:80456437/loosen.copen)
+ http://docs.php.net/manual/zh/reserved.exceptions.php
+    Exception 
+    ErrorException
 }}}
