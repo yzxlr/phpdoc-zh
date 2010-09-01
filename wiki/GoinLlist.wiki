@@ -29,7 +29,9 @@
  Fising(QQ:397334114|Flasher:1428453041/tor.browser.bridge)  2010-08-27 15:41:52
  http://docs.php.net/manual/zh/reserved.variables.php（提交）
  http://docs.php.net/manual/zh/language.variables.superglobals.php（提交）
- http://docs.php.net/manual/zh/reserved.interfaces.php
+ http://docs.php.net/manual/zh/reserved.interfaces.php（提交）
+ http://docs.php.net/manual/zh/book.strings.php
+
 
  ligang wang(/suppersoft) 2010-08-27 13:52
  http://docs.php.net/manual/zh/features.gc.refcounting-basics.php （预计两周）
