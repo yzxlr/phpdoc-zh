@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision: 296092 $ -->
+<!-- $Revision: 288721 $ -->
 
-<phpdoc:varentry xmlns:phpdoc="http://php.net/ns/phpdoc" xml:id="reserved.variables.get" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" role="noversion">
+<phpdoc:varentry xmlns:phpdoc="http://php.net/ns/phpdoc" xml:id="reserved.variables.post" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" role="noversion">
  <refnamediv>
-  <refname>$_GET</refname>
-  <refname>$HTTP_GET_VARS [弃用]</refname>
-  <refpurpose>HTTP GET 变量</refpurpose>
+  <refname>$_POST</refname>
+  <refname>$HTTP_POST_VARS [弃用]</refname>
+  <refpurpose>HTTP POST 变量</refpurpose>
  </refnamediv>
  
  <refsect1 role="description">
   &reftitle.description;
   <para>
-  通过 URL 参数传递给当前脚本的变量的数组。
+   通过 HTTP POST 方法传递给当前脚本的变量的数组。
   </para>
 
   <simpara>
-   <varname>$HTTP_GET_VARS</varname> 包含相同的信息， 但它不是一个<link linkend="language.variables.superglobals">超全局变量</link>。
-   (注意 <varname>$HTTP_GET_VARS</varname> 和 <varname>$_GET</varname> 是不同的变量，PHP 处理它们的方式不同)
+   <varname>$HTTP_POST_VARS</varname> 包含相同的信息，但它不是一个<link linkend="language.variables.superglobals">超全局变量</link>。
+   (注意 <varname>$HTTP_POST_VARS</varname> 和 <varname>$_POST</varname> 是不同的变量，PHP 处理它们的方式不同)
   </simpara>
 
  </refsect1>
@@ -37,7 +37,7 @@
       <row>
        <entry>4.1.0</entry>
        <entry>
-        引入 <varname>$_GET</varname>，弃用 <varname>$HTTP_GET_VARS</varname>。
+        引入 <varname>$_POST</varname>，弃用 <varname>$HTTP_POST_VARS</varname>。
        </entry>
       </row>
      </tbody>
@@ -49,17 +49,17 @@
  <refsect1 role="examples">
   &reftitle.examples;
   <para>
-   <example xml:id="variable.get.basic">
-    <title><varname>$_GET</varname> 范例</title>
+   <example xml:id="variable.post.basic">
+    <title><varname>$_POST</varname> 范例</title>
     <programlisting role="php">
 <![CDATA[
 <?php
-echo 'Hello ' . htmlspecialchars($_GET["name"]) . '!';
+echo 'Hello ' . htmlspecialchars($_POST["name"]) . '!';
 ?>
 ]]>
     </programlisting>
     <simpara>
-     假设用户访问的是 http://example.com/?name=Hannes
+     假设用户通过 HTTP POST 方式传递了参数 name=Hannes
     </simpara>
     &example.outputs.similar;
     <screen>
@@ -74,11 +74,6 @@ Hello Hannes!
  <refsect1 role="notes">
   &reftitle.notes;
   &note.is-superglobal;
-  <note>
-   <para>
-    GET 是通过 <function>urldecode</function> 传递的。
-   </para>
-  </note>
  </refsect1>
 
  <refsect1 role="seealso">
