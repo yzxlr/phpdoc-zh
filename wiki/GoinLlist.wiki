@@ -40,6 +40,6 @@
  
  刘松(QQ:80456437/loosen.copen)
  http://docs.php.net/manual/zh/reserved.exceptions.php
-    Exception 
-    ErrorException
+ http://docs.php.net/manual/zh/class.exception.php
+ http://docs.php.net/manual/zh/class.errorexception.php
 }}}
