@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Revision: 300072 $ -->
+<section xml:id="apc.configuration" xmlns="http://docbook.org/ns/docbook">
+ &reftitle.runtime;
+ &extension.runtime;
+ <para>
+ 尽管默认的 APC 设定对于大多数安装已经没问题，但专业人员应考虑调整以下参数。
+ </para>
+ <para>
+  There are two primary decisions to be made configuring APC.  First,
+  how much memory is going to be allocated to APC; and second, whether APC
+  will check if a file has been modified on every request. APC有两个主要的配置选项。第一，多少内存将被分配给APC;第二，每次请求APC是否检查文件修改。两个ini选项分别控制这些设置 <literal>apc.shm_size</literal>
+  和<literal>apc.stat</literal>.就这两项配置仔细阅读下面的章节。
+ </para>
+ <para>
+  一旦服务器运行起来了,  <literal>apc.php</literal> 脚本可以拷贝到一个可以通过浏览器访问到的Web目录中，通过浏览器访问这个脚本会得到APC工作状态的详细分析，如果在PHP中启用了GD扩展，它甚至会显示一些有趣的图表。当然，首要的事情是要确保真的缓存了文件。  如果APC运行了， <literal>缓存完全统计
+  </literal> 数目 (在左上角)将显示缓存的命中率并且清除在最后 <literal>apc.ttl</literal> 秒内没有被访问的缓存。 这个数字使缓存的最小化的很好配置。如果缓存不断的被填充和清除，这将影响缓存的效果和脚本的性能。减少这个数字的最好方式就是给APC分配足够多的内存。除此之外, 可以通过 <literal>apc.filters
+  </literal>缓存更少的脚本。
+ </para>
+ <para>
+  <table>
+   <title>APC配置选项</title>
+   <tgroup cols="4">
+    <thead>
+     <row>
+      <entry>Name</entry>
+      <entry>Default</entry>
+      <entry>Changeable</entry>
+      <entry>Changelog</entry>
+     </row>
+    </thead>
+    <tbody>
+     <row>
+      <entry><link linkend="ini.apc.enabled">apc.enabled</link></entry>
+      <entry>"1"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>PHP_INI_SYSTEM in APC 2. PHP_INI_ALL in APC &lt;= 3.0.12.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.shm-segments">apc.shm_segments</link></entry>
+      <entry>"1"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry></entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.shm-size">apc.shm_size</link></entry>
+      <entry>"30"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry></entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.optimization">apc.optimization</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_ALL</entry>
+      <entry>PHP_INI_SYSTEM in APC 2. Removed in APC 3.0.13.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.num-files-hint">apc.num_files_hint</link></entry>
+      <entry>"1000"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry></entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.user-entries-hint">apc.user_entries_hint</link></entry>
+      <entry>"4096"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.0.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.ttl">apc.ttl</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.0.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.user-ttl">apc.user_ttl</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.0.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.gc-ttl">apc.gc_ttl</link></entry>
+      <entry>"3600"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry></entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.cache-by-default">apc.cache_by_default</link></entry>
+      <entry>"1"</entry>
+      <entry>PHP_INI_ALL</entry>
+      <entry>PHP_INI_SYSTEM in APC &lt;= 3.0.12. Available since APC 3.0.0.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.filters">apc.filters</link></entry>
+      <entry>NULL</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry></entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.mmap-file-mask">apc.mmap_file_mask</link></entry>
+      <entry>NULL</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry></entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.slam-defense">apc.slam_defense</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.0.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.file-update-protection">apc.file_update_protection</link></entry>
+      <entry>"2"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.6.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.enable-cli">apc.enable_cli</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.7.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.max-file-size">apc.max_file_size</link></entry>
+      <entry>"1M"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.7.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.use-request-time">apc.use_request_time</link></entry>
+      <entry>"1"</entry>
+      <entry>PHP_INI_ALL</entry>
+      <entry>Available since APC 3.1.3.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.stat">apc.stat</link></entry>
+      <entry>"1"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.10.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.write-lock">apc.write_lock</link></entry>
+      <entry>"1"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.11.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.report-autofilter">apc.report_autofilter</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.11.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.include-once-override">apc.include_once_override</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.12.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.rfc1867">apc.rfc1867</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.13.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.rfc1867-prefix">apc.rfc1867_prefix</link></entry>
+      <entry>"upload_"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry></entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.rfc1867-name">apc.rfc1867_name</link></entry>
+      <entry>"APC_UPLOAD_PROGRESS"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry></entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.rfc1867-freq">apc.rfc1867_freq</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry></entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.rfc1867-ttl">apc.rfc1867_ttl</link></entry>
+      <entry>"3600"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.1.1.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.localcache">apc.localcache</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.14.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.localcache.size">apc.localcache.size</link></entry>
+      <entry>"512"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.14.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.coredump-unmap">apc.coredump_unmap</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.16.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.stat-ctime">apc.stat_ctime</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.0.13.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.preload-path">apc.preload_path</link></entry>
+      <entry>NULL</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.1.1.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.file-md5">apc.file_md5</link></entry>
+      <entry>"0"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.1.1.</entry>
+     </row>
+     <row>
+      <entry><link linkend="ini.apc.canonicalize">apc.canonicalize</link></entry>
+      <entry>"1"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.1.1.</entry>
+     </row>
+     <row>
+      <entry>apc.lazy_functions</entry>
+      <entry>0</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.1.3.</entry>
+     </row>
+     <row>
+      <entry>apc.lazy_classes</entry>
+      <entry>0</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available since APC 3.1.3.</entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </table>
+  &ini.php.constants;
+ </para>
+ 
+ &ini.descriptions.title;
+ 
+ <para>
+  <variablelist>
+   <varlistentry xml:id="ini.apc.enabled">
+    <term>
+     <parameter>apc.enabled</parameter>
+     <type>boolean</type>
+    </term>
+    <listitem>
+     <para>
+      <literal>apc.enabled</literal> 可以设成 0 来禁用 APC.主要是用在当 APC 被静态编译入 PHP 时，因为没有其它方法来禁用了(编译为 DSO , 的时候，可以将<literal>php.ini</literal>中的<literal>extension</literal>
+     行注释掉)。
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.shm-segments">
+    <term>
+     <parameter>apc.shm_segments</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      编译器缓存要分配的共享内存块的数目。如果 APC 用光了共享内存但是已经将 <literal>apc.shm_size</literal> 
+     设为了系统所能允许的最大值，可以尝试增大此值。 
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.shm-size">
+    <term>
+     <parameter>apc.shm_size</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+     以 MB 为单位的每个共享内存块的大小。默认时，有些系统（包括大多数 BSD 变种）的共享内存块大小非常低。 
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.optimization">
+    <term>
+     <parameter>apc.optimization</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+     优化级别。设为 0 则禁用优化器，更高的值则使用更主动的优化。期望非常有限的速度提升。尚在试验中。 
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.num-files-hint">
+    <term>
+     <parameter>apc.num_files_hint</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+     Web 服务器上的被包含或被请求的不同源文件的数目的大概估计。如果不确定则设为 0 或去掉此项；此设定主要用在有数千个源文件的站点。 
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.user-entries-hint">
+    <term>
+     <parameter>apc.user_entries_hint</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+       与<link linkend="ini.apc.num-files-hint">apc.num_files_hint</link>类似,
+	  根据唯一用户数来存储缓存变量。 如果不能确定则设置为0或或去掉此项。
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.ttl">
+    <term>
+     <parameter>apc.ttl</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      缓存条目在缓冲区所允许的空闲时间的秒数。将此设为零意味着缓冲区有可能被阻赛了的缓存充满而导致新条目不被缓存。 
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.user-ttl">
+    <term>
+     <parameter>apc.user_ttl</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      The number of seconds a cache entry is allowed to
+      idle in a slot in case this cache entry slot is
+      needed by another entry.  Leaving this at zero
+      means that APC's cache could potentially fill up
+      with stale entries while newer entries won't be
+      cached.  In the event of a cache running out of
+      available memory, the cache will be completely
+      expunged if ttl is equal to 0.  Otherwise, if the
+      ttl is greater than 0, APC will attempt to remove
+      expired entries.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.gc-ttl">
+    <term>
+     <parameter>apc.gc_ttl</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      缓存条目在垃圾回收表中能够存在的秒数。此值提供了一个安全措施，即在服务器进程在执行缓存的源文件时，如果该文件被修改则旧版本将不会被回收，直到达到此 TTL 为止。设为零将禁用此特性。
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.cache-by-default">
+    <term>
+     <parameter>apc.cache_by_default</parameter>
+     <type>boolean</type>
+    </term>
+    <listitem>
+     <para>
+      默认为 on，但可以设为 off 并和加号开头的 <literal>apc.filters</literal> 一起用，则文件仅在匹配过滤器时被缓存。
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.filters">
+    <term>
+     <parameter>apc.filters</parameter>
+     <type>string</type>
+    </term>
+    <listitem>
+     <para>
+      一个以逗号分隔的 POSIX 扩展正则表达式的列表。如果任一个模式匹配源文件名，则该文件不被缓存。注意用来匹配的文件名是传递给 include/require 的文件名，而不是绝对路径。如果正则表达式的第一个字符是<literal>+</literal> t则意味着任何匹配表达式的文件会被缓存，如果第一个字符是 <literal>-</literal> 则任何匹配项都不会被缓存。 <literal>-</literal>是默认值，可以省略掉。
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.mmap-file-mask">
+    <term>
+     <parameter>apc.mmap_file_mask</parameter>
+     <type>string</type>
+    </term>
+    <listitem>
+     <para>
+      If compiled with MMAP support by using <literal>--enable-mmap</literal>
+      this is the mktemp-style file_mask to pass to the
+      mmap module for determining whether your mmap'ed memory
+      region is going to be file-backed or shared memory
+      backed.  For straight file-backed mmap, set it to
+      something like <literal>/tmp/apc.XXXXXX</literal>
+      (exactly 6 <literal>X</literal>s).
+      To use POSIX-style shm_open/mmap put a <literal>.shm</literal>
+      somewhere in your mask.  e.g. <literal>/apc.shm.XXXXXX</literal>
+      You can also set it to <literal>/dev/zero</literal> to use your
+      kernel's <literal>/dev/zero</literal> interface to anonymous mmap'ed
+      memory. Leaving it undefined will force an anonymous mmap.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.slam-defense">
+    <term>
+     <parameter>apc.slam_defense</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      On very busy servers whenever you start the server or
+      modify files you can create a race of many processes
+      all trying to cache the same file at the same time.
+      This option sets the percentage of processes that will
+      skip trying to cache an uncached file.  Or think of it
+      as the probability of a single process to skip caching.
+      For example, setting <literal>apc.slam_defense</literal>
+      to <literal>75</literal> would mean that there is
+      a 75% chance that the process will not cache an uncached
+      file. So, the higher the setting the greater the defense
+      against cache slams.  Setting this to <literal>0</literal>
+      disables this feature.
+     </para>
+     <para>
+      Deprecated by <link linkend="ini.apc.write-lock">apc.write_lock</link>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.file-update-protection">
+    <term>
+     <parameter>apc.file_update_protection</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      When a file is modified on a live web server it really
+      ought to be done in an atomic manner.  That is, written to a
+      temporary file and renamed (<literal>mv</literal>) the file into its
+      permanent position when it is ready.  Many text editors,
+      <command>cp</command>, <command>tar</command> and
+      other such programs don't do this.  This means that there
+      is a chance that a file is accessed (and cached) while it
+      is still being written to.  This <literal>apc.file_update_protection</literal>
+      setting puts a delay on caching brand new files.  The
+      default is 2 seconds, which means that if the modification
+      timestamp (<literal>mtime</literal>) on a file shows that it is less than 2
+      seconds old when it is accessed, it will not be cached.
+      The unfortunate person who accessed this half-written file
+      will still see weirdness, but at least it won't persist.
+      If all of the webserver's files are atomically updated, via
+      some method like <command>rsync</command> (which updates correctly),
+      this protection can be disabled by setting this directive to 0.
+      If the system is flooded with i/o and some update procedures
+      are taking longer than 2 seconds, this setting should be increased
+      to enable the protection on those slower update operations.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.enable-cli">
+    <term>
+     <parameter>apc.enable_cli</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      Mostly for testing and debugging.  Setting this enables APC
+      for the CLI version of PHP.  Under normal circumstances, it is
+      not ideal to create, populate and destroy the APC cache on every
+      CLI request, but for various test scenarios it is useful to be
+      able to enable APC for the CLI version of PHP easily.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.max-file-size">
+    <term>
+     <parameter>apc.max_file_size</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      Prevent files larger than this value from getting cached.  Defaults to
+      1M. 
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.apc.stat">
+    <term>
+     <parameter>apc.stat</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      Be careful changing this setting.  This defaults to on, forcing APC to
+      stat (check) the script on each request to determine if it has been modified.
+      If it has been modified it will recompile and cache the new version.  
+      If this setting is off, APC will not check, which usually means that to 
+      force APC to recheck files, the web server will have to be restarted or the 
+      cache will have to be manually cleared.  Note that FastCGI web server configurations
+      may not clear the cache on restart.  On a production server where the 
+      script files rarely change, a significant performance boost can be 
+      achieved by disabled stats.
+     </para>
+     <para>
+      For included/required files this option applies as well, but note that
+      for relative path includes (any path that doesn't start
+      with / on Unix) APC has to check in order to uniquely identify the file.
+      If you use absolute path includes APC can skip the stat and use that
+      absolute path as the unique identifier for the file.
+     </para>
+    </listitem>
+   </varlistentry>
+   
+   <varlistentry xml:id="ini.apc.write-lock">
+    <term>
+     <parameter>apc.write_lock</parameter>
+     <type>boolean</type>
+    </term>
+    <listitem>
+     <para>
+      On busy servers, when the web server is first started, or when many files
+      have been modified at the same time, APC may try to compile and cache the 
+      same file multiple times.  Write_lock guarantees that only one process
+      will attempt to compile and cache an uncached script.  The other processes 
+      attempting to use the script will run without using the opcode cache, rather
+      than locking and waiting for the cache to prime.
+     </para>
+    </listitem>
+   </varlistentry>
+   
+   <varlistentry xml:id="ini.apc.report-autofilter">
+    <term>
+     <parameter>apc.report_autofilter</parameter>
+     <type>boolean</type>
+    </term>
+    <listitem>
+     <para>
+      Logs any scripts that were automatically excluded from being cached due
+      to early/late binding issues.
+     </para>
+    </listitem>
+   </varlistentry>
+   
+   <varlistentry xml:id="ini.apc.include-once-override">
+    <term>
+     <parameter>apc.include_once_override</parameter>
+     <type>boolean</type>
+    </term>
+    <listitem>
+     <para>
+      Optimize <function>include_once</function> and <function>require_once</function>
+      calls and avoid the expensive system calls used.
+     </para>
+    </listitem>
+   </varlistentry>
+   
+   <varlistentry xml:id="ini.apc.rfc1867">
+    <term>
+     <parameter>apc.rfc1867</parameter>
+     <type>boolean</type>
+    </term>
+    <listitem>
+     <para>
+      RFC1867 File Upload Progress hook handler is only available if APC 
+      was compiled against PHP 5.2.0 or later. When enabled, any file uploads
+      which includes a field called <literal>APC_UPLOAD_PROGRESS</literal>
+      before the file field in an upload form will cause APC to automatically
+      create an upload_<emphasis>key</emphasis> user cache entry where
+      <emphasis>key</emphasis> is the value of the
+      <literal>APC_UPLOAD_PROGRESS</literal> form entry.
+     </para>
+     <para>
+      Note that the hidden field specified by
+      <literal>APC_UPLOAD_PROGRESS</literal> must come before the file field,
+      otherwise the upload progress will not work correctly.
+     </para>
+     <para>
+      Note that the file upload tracking is not threadsafe at this point, so
+      new uploads that happen while a previous one is still going will disable
+      the tracking for the previous.
+     </para>
+     <para>
+      <example>
+       <title>An apc.rfc1867 example</title>
+       <programlisting role="php">
+<![CDATA[
+<?php
+print_r(apc_fetch("upload_$_POST[APC_UPLOAD_PROGRESS]"));
+?>
+]]>
+       </programlisting>
+       &example.outputs.similar;
+       <screen>
+<![CDATA[
+Array
+(
+    [total] => 1142543
+    [current] => 1142543
+    [rate] => 1828068.8
+    [filename] => test
+    [name] => file
+    [temp_filename] => /tmp/php8F
+    [cancel_upload] => 0
+    [done] => 1
+)
+]]>
+       </screen>
+      </example>
+     </para>
+    </listitem>
+   </varlistentry>
+   
+   <varlistentry xml:id="ini.apc.rfc1867-prefix">
+    <term>
+     <parameter>apc.rfc1867_prefix</parameter>
+     <type>string</type>
+    </term>
+    <listitem>
+     <para>
+      Key prefix to use for the user cache entry generated by rfc1867 upload
+      progress functionality.
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.rfc1867-name">
+    <term>
+     <parameter>apc.rfc1867_name</parameter>
+     <type>string</type>
+    </term>
+    <listitem>
+     <para>
+      Specify the hidden form entry name that activates APC upload progress
+      and specifies the user cache key suffix.
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.rfc1867-freq">
+    <term>
+     <parameter>apc.rfc1867_freq</parameter>
+     <type>string</type>
+    </term>
+    <listitem>
+     <para>
+      The frequency that updates should be made to the user cache entry for
+      upload progress.  This can take the form of a percentage of the total
+      file size or a size in bytes optionally suffixed with
+      <literal>"k"</literal>, <literal>"m"</literal>, or <literal>"g"</literal>
+      for kilobytes, megabytes, or gigabytes respectively (case insensitive).
+      A setting of 0 updates as often as possible, which may cause slower
+      uploads.
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.rfc1867-ttl">
+    <term>
+     <parameter>apc.rfc1867_ttl</parameter>
+     <type>bool</type>
+    </term>
+    <listitem>
+     <para>
+      <acronym>TTL</acronym> for rfc1867 entries.
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.localcache">
+    <term>
+     <parameter>apc.localcache</parameter>
+     <type>boolean</type>
+    </term>
+    <listitem>
+     <para>
+      This enables a lock-free local process shadow-cache which reduces lock
+      contention when the cache is being written to.
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.localcache.size">
+    <term>
+     <parameter>apc.localcache.size</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      The size of the local process shadow-cache, should be set to a
+      sufficiently large value, approximately half of
+      <link linkend="ini.apc.num-files-hint">apc.num_files_hint</link>.
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.coredump-unmap">
+    <term>
+     <parameter>apc.coredump_unmap</parameter>
+     <type>boolean</type>
+    </term>
+    <listitem>
+     <para>
+      Enables APC handling of signals, such as SIGSEGV, that write
+      core files when signaled. When these signals are received,
+      APC will attempt to unmap the shared memory segment in order
+      to exclude it from the core file. This setting may improve
+      system stability when fatal signals are received and a large 
+      APC shared memory segment is configured.
+     </para>
+     <warning>
+      <para>
+       This feature is potentially dangerous. Unmapping the shared
+       memory segment in a fatal signal handler may cause undefined
+       behaviour if a fatal error occurs.
+      </para>
+     </warning>
+     <note>
+      <para>
+       Although some kernels may provide a facility to ignore various
+       types of shared memory when generating a core dump file, these 
+       implementations may also ignore important shared memory segments
+       such as the Apache scoreboard.
+      </para>
+     </note>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.stat-ctime">
+    <term>
+     <parameter>apc.stat_ctime</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      Verification with ctime will avoid problems caused by programs such 
+      as svn or rsync by making sure inodes haven't changed since the last 
+      stat. APC will normally only check mtime.
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.canonicalize">
+    <term>
+     <parameter>apc.canonicalize</parameter>
+     <type>bool</type>
+    </term>
+    <listitem>
+     <para>
+      如果设置为on，则在no-state模式中会使用规范化的相对路径
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.preload-path">
+    <term>
+     <parameter>apc.preload_path</parameter>
+     <type>string</type>
+    </term>
+    <listitem>
+     <para>
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.use-request-time">
+    <term>
+     <parameter>apc.use_request_time</parameter>
+     <type>bool</type>
+    </term>
+    <listitem>
+     <para>
+      Use the <acronym>SAPI</acronym> request start time for
+      <acronym>TTL</acronym>.
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.file-md5">
+    <term>
+     <parameter>apc.file_md5</parameter>
+     <type>bool</type>
+    </term>
+    <listitem>
+     <para>
+      记录文件的md5值
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.lazy-functions">
+    <term>
+     <parameter>apc.lazy_functions</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      启用函数延迟加载
+     </para>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry xml:id="ini.apc.lazy-classes">
+    <term>
+     <parameter>apc.lazy_classes</parameter>
+     <type>integer</type>
+    </term>
+    <listitem>
+     <para>
+      启用类延迟加载
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </para>
+</section>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:1
+sgml-indent-data:t
+indent-tabs-mode:nil
+sgml-parent-document:nil
+sgml-default-dtd-file:"~/.phpdoc/manual.ced"
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+vim600: syn=xml fen fdm=syntax fdl=2 si
+vim: et tw=78 syn=sgml
+vi: ts=1 sw=1
+-->
