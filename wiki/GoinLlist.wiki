@@ -17,7 +17,7 @@
  胜邪(QQ:16376529/leeeinstein)  2010-08-25 23:25:56
  http://docs.php.net/manual/zh/memcache.addserver.php
  
- 朝沐金风(QQ:79194034)  2010-08-25 0:01:02
+ 朝沐金风(QQ:79194034/codingall)  2010-08-25 0:01:02
  http://docs.php.net/manual/zh/book.curl.php
  
  崔玉松(QQ:376062434/cuimuxi)  2010-08-26 17:02:39
