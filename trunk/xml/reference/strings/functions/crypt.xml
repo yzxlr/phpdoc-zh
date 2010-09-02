@@ -254,8 +254,8 @@ SHA-512:      $6$rounds=5000$usesomesillystri$D4IrlXatmP7rx3P3InaxBeoomnAihCKRVQ
   <para>
    <simplelist>
     <member><function>md5</function></member>
-    <member>The <link linkend="ref.mcrypt">Mcrypt</link> extension</member>
-    <member>The Unix man page for your crypt function for more information</member>
+    <member><link linkend="ref.mcrypt">Mcrypt</link> 扩展</member>
+    <member>更多关于 crypt 函数的信息，请阅读 Unix man 页面</member>
    </simplelist>
   </para>
  </refsect1>
