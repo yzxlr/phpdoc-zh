@@ -3,7 +3,7 @@
 <refentry xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook" xml:id="function.crypt">
  <refnamediv>
   <refname>crypt</refname>
-  <refpurpose>One-way string hashing</refpurpose>
+  <refpurpose>单向字符串散列</refpurpose>
  </refnamediv>
  
  <refsect1 role="description">
@@ -14,54 +14,31 @@
    <methodparam choice="opt"><type>string</type><parameter>salt</parameter></methodparam>
   </methodsynopsis>
   <para>
-   <function>crypt</function> will return a hashed string using the
-   standard Unix <abbrev>DES</abbrev>-based algorithm or
-   alternative algorithms that may be available on the system.
+   <function>crypt</function> 返回一个基于标准 UNIX <abbrev>DES</abbrev> 算法或系统上其他可用的替代算法的散列字符串。
   </para>
   <para>
-   Some operating systems support more than one type of hash.  In
-   fact, sometimes the standard DES-based algorithm is replaced by an
-   MD5-based algorithm.  The hash type is triggered by the salt argument.
-   Prior to 5.3, PHP would determine the available algorithms at install-time
-   based on the system's crypt(). If no salt is provided, PHP will
-   auto-generate either a standard two character (DES) salt, or a twelve
-   character (MD5), depending on the availability of MD5 crypt().  PHP sets a
-   constant named <constant>CRYPT_SALT_LENGTH</constant> which indicates the
-   longest valid salt allowed by the available hashes.
+   有些系统支持不止一种散列类型。实际上，有时候，基于 MD5 的算法被用来替代基于标准 DES 的算法。这种散列类型由盐值参数触发。在 5.3 之前，PHP 在安装时根据系统的 crypt() 决定可用的算法。如果没有提供盐值，PHP 将自动生成一个 2 个字符（DES）或者 12 个字符（MD5）的盐值	，这取决于 MD5 crypt() 的可用性。PHP 设置了一个名为 <constant>CRYPT_SALT_LENGTH</constant> 的常量，用来表示可用散列允许的最长可用盐值。
   </para>
   <para>
-   The standard DES-based <function>crypt</function> returns the
-   salt as the first two characters of the output. It also only uses the
-   first eight characters of <parameter>str</parameter>, so longer strings
-   that start with the same eight characters will generate the same result
-   (when the same salt is used).
+   基于标准 DES 算法的 <function>crypt</function> 在输出内容的开始位置返回两个字符的盐值。它也只使用 <parameter>str</parameter> 的开始 8 个字符，所以更长的以相同 8 个字符开始的字符串也将生成相同的结果（当使用了相同的盐值时）。
   </para>
   <simpara>
-   On systems where the crypt() function supports multiple
-   hash types, the following constants are set to 0 or 1
-   depending on whether the given type is available:
+   在 crypt() 函数支持多重散列的系统上，下面的常量根据相应的类型是否可用被设置为 0 或 1：
   </simpara>
   <itemizedlist>
    <listitem>
     <simpara>
-     <constant>CRYPT_STD_DES</constant> - Standard DES-based hash with a two character salt
-       from the alphabet "./0-9A-Za-z". Using invalid characters in the salt will cause
-       crypt() to fail.
+     <constant>CRYPT_STD_DES</constant> - 基于标准 DES 算法的散列使用 "./0-9A-Za-z" 字符中的两个字符作为盐值。在盐值中使用非法的字符将导致 crypt() 失败。
     </simpara>
    </listitem>
    <listitem>
     <simpara>
-     <constant>CRYPT_EXT_DES</constant> - Extended DES-based hash. The "salt" is a
-     9-character string consisting of an underscore followed by 4 bytes of iteration count and
-     4 bytes of salt. These are encoded as printable characters, 6 bits per character, least
-     significant character first. The values 0 to 63 are encoded as "./0-9A-Za-z". Using invalid
-     characters in the salt will cause crypt() to fail.
+     <constant>CRYPT_EXT_DES</constant> - 扩展的基于 DES 算法的散列。其盐值为 9 个字符的字符串，由 1 个下划线后面跟着 4 字节迭代数量和 4 字节盐值组成。它们被编码成可打印字符，每个字符 6 位，有效位最少的优先。0 到 63 被编码为 "./0-9A-Za-z"。在盐值中使用非法的字符将导致 crypt() 失败。
     </simpara>
    </listitem>
    <listitem>
     <simpara>
-     <constant>CRYPT_MD5</constant> - MD5 hashing with a twelve character salt starting with
-     $1$
+     <constant>CRYPT_MD5</constant> - MD5 散列使用一个以 $1$ 开始的 12 字符的字符串盐值。
     </simpara>
    </listitem>
    <listitem>
