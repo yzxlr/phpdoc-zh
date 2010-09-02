@@ -10,7 +10,7 @@
  <refsect1 role="description">
   &reftitle.description;
   <para>
-   默认情况下包含了 <varname>$_GET</varname>，<varname>$_POST</varname>&listendand;，<varname>$_COOKIE</varname> 的<type>数组</type>。
+   默认情况下包含了 <varname>$_GET</varname>，<varname>$_POST</varname> &listendand; <varname>$_COOKIE</varname> 的<type>数组</type>。
   </para>
  </refsect1>
  

@@ -10,7 +10,7 @@
  <refsect1 role="description">
   &reftitle.description;
   <para>
-   PHP 中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可以用。在函数或方法中无需执行 <command>global $variable;</command> 来访问它们。
+   PHP 中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可用。在函数或方法中无需执行 <command>global $variable;</command> 来访问它们。
   </para>
   <para>
    这些超全局变量是：
@@ -68,7 +68,7 @@
     <varname>$_POST['foo']</varname> 也将以 <varname>$foo</varname> 的形式存在。
    </para>
    <para>
-    相关信息，参见 FAQ "<link linkend="faq.register-globals">register_globals 有何影响？</link>"
+    相关信息，参见 FAQ “<link linkend="faq.register-globals">register_globals 对我有什么影响？</link>”
    </para>
   </note>
   <note>
@@ -85,7 +85,7 @@
    <simplelist>
     <member><link linkend="language.variables.scope">变量作用域</link></member>
     <member><link linkend="ini.variables-order">variables_order</link> 指令</member>
-    <member><link linkend="book.filter">筛选器扩展</link></member>
+    <member><link linkend="book.filter">过滤器扩展</link></member>
    </simplelist>
   </para>
  </refsect1>

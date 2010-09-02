@@ -15,8 +15,8 @@
   </para>
 
   <simpara>
-   <varname>$HTTP_SERVER_VARS</varname> 包含着相同的信息，但却不是一个<link linkend="language.variables.superglobals">超全局变量</link>。
-   (注意 <varname>$HTTP_SERVER_VARS</varname> 与 <varname>$_SERVER</varname> 是不同的变量，PHP处理他们的方式不同)
+   <varname>$HTTP_SERVER_VARS</varname> 包含着相同的信息，但它不是一个<link linkend="language.variables.superglobals">超全局变量</link>。
+   (注意 <varname>$HTTP_SERVER_VARS</varname> 与 <varname>$_SERVER</varname> 是不同的变量，PHP处理它们的方式不同)
   </simpara>
  </refsect1>
 
@@ -45,7 +45,7 @@
      <term>'<link linkend="reserved.variables.argv">argv</link>'</term>
      <listitem>
       <simpara>
-       传递给该脚本的参数的数组。当脚本以命令行方式运行时，argv 变量传递给程序 C 语言样式的命令行参数。当通过 GET 方式调用时，该变量包含 query string。
+       传递给该脚本的参数的数组。当脚本以命令行方式运行时，argv 变量传递给程序 C 语言样式的命令行参数。当通过 GET 方式调用时，该变量包含query string。
       </simpara>
      </listitem>
     </varlistentry>
@@ -90,7 +90,7 @@
      <term>'<varname>SERVER_SOFTWARE</varname>'</term>
      <listitem>
       <simpara>
-       服务器标识字串串，在响应请求时的头信息中给出。
+       服务器标识字符串，在响应请求时的头信息中给出。
       </simpara>
      </listitem>
     </varlistentry>
@@ -108,7 +108,7 @@
      <term>'<varname>REQUEST_METHOD</varname>'</term>
      <listitem>
       <simpara>
-       访问页面使用的请求方法; 例如，“<literal>GET</literal>”, “<literal>HEAD</literal>”，“<literal>POST</literal>”，“<literal>PUT</literal>”。
+       访问页面使用的请求方法；例如，“<literal>GET</literal>”, “<literal>HEAD</literal>”，“<literal>POST</literal>”，“<literal>PUT</literal>”。
       </simpara>
       <note>
        <para>
@@ -131,7 +131,7 @@
      <term>'<varname>QUERY_STRING</varname>'</term>
      <listitem>
       <simpara>
-	   query string(查询字符串)，如果有的话，通过它进行页面访问。
+	   query string（查询字符串），如果有的话，通过它进行页面访问。
       </simpara>
      </listitem>
     </varlistentry>
@@ -203,7 +203,7 @@
      <term>'<varname>HTTP_REFERER</varname>'</term>
      <listitem>
       <simpara>
-       引导用户代理到当前页的前一页的地址(如果存在)。由 user agent 设置决定。并不是所有的用户代理都会设置该项，有的还提供了修改 <varname>HTTP_REFERER</varname> 的功能。简言之，该值并不可信。
+       引导用户代理到当前页的前一页的地址（如果存在）。由 user agent 设置决定。并不是所有的用户代理都会设置该项，有的还提供了修改 <varname>HTTP_REFERER</varname> 的功能。简言之，该值并不可信。
       </simpara>
      </listitem>
     </varlistentry>
@@ -227,7 +227,6 @@
       <note>
        <simpara>
         注意当使用 IIS 上的 ISAPI 方式时，如果不是通过 HTTPS 协议被访问，这个值将为 <literal>off</literal>。
-        protocol.
        </simpara>
       </note>
      </listitem>
@@ -272,7 +271,7 @@
        当前执行脚本的绝对路径。
        <note>
         <para>
-         如果在命令行界面(Command Line Interface, CLI)使用相对路径执行脚本，例如 <filename>file.php</filename> 或 <filename>../file.php</filename>，那么 <varname>$_SERVER['SCRIPT_FILENAME']</varname> 将包含用户指定的相对路径。
+         如果在命令行界面（Command Line Interface, CLI）使用相对路径执行脚本，例如 <filename>file.php</filename> 或 <filename>../file.php</filename>，那么 <varname>$_SERVER['SCRIPT_FILENAME']</varname> 将包含用户指定的相对路径。
         </para>
        </note>
       </para>
@@ -310,7 +309,7 @@
      <term>'<varname>PATH_TRANSLATED</varname>'</term>
      <listitem>
       <simpara>
-       当前脚本所在文件系统(非文档根目录)的基本路径。这是在服务器进行虚拟到真实路径的映像后的结果。
+       当前脚本所在文件系统（非文档根目录）的基本路径。这是在服务器进行虚拟到真实路径的映像后的结果。
       </simpara>
       <note>
        <simpara>
@@ -345,7 +344,7 @@
      <term>'<varname>PHP_AUTH_DIGEST</varname>'</term>
      <listitem>
       <simpara>
-       当作为 Apache 模块运行时，进行 HTTP Digest 认证的过程中，此变量被设置成客户端发送的“Authorization”HTTP 头内容（以便作进一步的认证操作）。 
+       当作为 Apache 模块运行时，进行 HTTP Digest 认证的过程中，此变量被设置成客户端发送的“Authorization” HTTP 头内容（以便作进一步的认证操作）。 
       </simpara>
      </listitem>
     </varlistentry>
@@ -381,7 +380,7 @@
      <term>'<varname>PATH_INFO</varname>'</term>
      <listitem>
       <simpara>
-       包含由客户端提供的、跟在真实脚本名称之后并且在查询语句(Query String)之前的路径信息，如果存在的话。例如，如果当前脚本是通过 URL <filename>http://www.example.com/php/path_info.php/some/stuff?foo=bar</filename> 被访问，那么 <varname>$_SERVER['PATH_INFO']</varname> 将包含 <literal>/some/stuff</literal>。
+       包含由客户端提供的、跟在真实脚本名称之后并且在查询语句（query string）之前的路径信息，如果存在的话。例如，如果当前脚本是通过 URL <filename>http://www.example.com/php/path_info.php/some/stuff?foo=bar</filename> 被访问，那么 <varname>$_SERVER['PATH_INFO']</varname> 将包含 <literal>/some/stuff</literal>。
       </simpara>
      </listitem>
     </varlistentry>
