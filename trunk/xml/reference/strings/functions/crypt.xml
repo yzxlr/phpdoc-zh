@@ -33,7 +33,7 @@
    </listitem>
    <listitem>
     <simpara>
-     <constant>CRYPT_EXT_DES</constant> - 扩展的基于 DES 算法的散列。其盐值为 9 个字符的字符串，由 1 个下划线后面跟着 4 字节迭代数量和 4 字节盐值组成。它们被编码成可打印字符，每个字符 6 位，有效位最少的优先。0 到 63 被编码为 "./0-9A-Za-z"。在盐值中使用非法的字符将导致 crypt() 失败。
+     <constant>CRYPT_EXT_DES</constant> - 扩展的基于 DES 算法的散列。其盐值为 9 个字符的字符串，由 1 个下划线后面跟着 4 字节循环次数和 4 字节盐值组成。它们被编码成可打印字符，每个字符 6 位，有效位最少的优先。0 到 63 被编码为 "./0-9A-Za-z"。在盐值中使用非法的字符将导致 crypt() 失败。
     </simpara>
    </listitem>
    <listitem>
@@ -43,39 +43,23 @@
    </listitem>
    <listitem>
     <simpara>
-     <constant>CRYPT_BLOWFISH</constant> - Blowfish hashing with a salt as follows:
-     "$2a$", a two digit cost parameter, "$", and 22 base 64 digits from the alphabet
-     "./0-9A-Za-z". Using characters outside of this range in the salt will cause crypt() to
-     return a zero-length string. The two digit cost parameter is the base-2 logarithm of the
-     iteration count for the underlying Blowfish-based hashing algorithmeter and must be in
-     range 04-31, values outside this range will cause crypt() to fail.
+     <constant>CRYPT_BLOWFISH</constant> - Blowfish 算法使用如下盐值：“$2a$”，一个两位 cost 参数，“$” 以及 64 位由 “./0-9A-Za-z” 中的字符组合而成的字符串。在盐值中使用此范围之外的字符将导致 crypt() 返回一个空字符串。两位 cost 参数是循环次数以 2 为底的对数，它的范围是 04-31，超出这个范围将导致 crypt() 失败。
     </simpara>
    </listitem>
    <listitem>
     <simpara>
-     <constant>CRYPT_SHA256</constant> - SHA-256 hash with a sixteen character salt
-     prefixed with $5$. If the salt string starts with 'rounds=&lt;N&gt;$', the numeric value of N
-     is used to indicate how many times the hashing loop should be executed, much like the cost
-     parameter on Blowfish. The default number of rounds is 5000, there is a minimum of
-     1000 and a maximum of 999,999,999. Any selection of N outside this range will be truncated to
-     the nearest limit.
+     <constant>CRYPT_SHA256</constant> - SHA-256 算法使用一个以 $5$ 开头的 16 字符字符串盐值进行散列。如果盐值字符串以 “rounds=&lt;N&gt;$” 开头，N 的数字值将被用来指定散列循环的执行次数，这点很像 Blowfish 算法的 cost 参数。默认的循环次数是 5000，最小是 1000，最大是 999,999,999。超出这个范围的 N 将会被转换为最接近的值。
     </simpara>
    </listitem>
    <listitem>
     <simpara>
-     <constant>CRYPT_SHA512</constant> - SHA-512 hash with a sixteen character salt
-     prefixed with $6$. If the salt string starts with 'rounds=&lt;N&gt;$', the numeric value of N
-     is used to indicate how many times the hashing loop should be executed, much like the cost
-     parameter on Blowfish. The default number of rounds is 5000, there is a minimum of
-     1000 and a maximum of 999,999,999. Any selection of N outside this range will be truncated to
-     the nearest limit.
+     <constant>CRYPT_SHA512</constant> - SHA-512 算法使用一个以 $6$ 开头的 16 字符字符串盐值进行散列。如果盐值字符串以 “rounds=&lt;N&gt;$” 开头，N 的数字值将被用来指定散列循环的执行次数，这点很像 Blowfish 算法的 cost 参数。默认的循环次数是 5000，最小是 1000，最大是 999,999,999。超出这个范围的 N 将会被转换为最接近的值。
     </simpara>
    </listitem>
   </itemizedlist>
   <note>
    <para>
-    As of PHP 5.3.0, PHP contains its own implementation and will use that
-    if the system lacks of support for one or more of the algorithms.
+    从 PHP 5.3.0 起，PHP 包含了它自己的实现，并将在系统缺乏相应算法支持的时候使用它自己的实现。
    </para>
   </note>
  </refsect1>
@@ -88,7 +72,7 @@
      <term><parameter>str</parameter></term>
      <listitem>
       <para>
-       The string to be hashed.
+       待散列的字符串。
       </para>
      </listitem>
     </varlistentry>
@@ -96,9 +80,7 @@
      <term><parameter>salt</parameter></term>
      <listitem>
       <para>
-       An optional salt string to base the hashing on. If not provided, the
-       behaviour is defined by the algorithm implementation and can lead to
-       unexpected results.
+       可选的盐值字符串。如果没有提供，算法行为将由不同的算法实现决定，并可能导致不可预料的结束。
       </para>
      </listitem>
     </varlistentry>
@@ -109,8 +91,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   Returns the hashed string or a string that is shorter than 13 characters
-   and is guaranteed to differ from the salt on failure.
+   返回散列后的字符串或一个少于 13 字符的字符串，从而保证在失败时与盐值区分开来。
   </para>
  </refsect1>
  
@@ -129,23 +110,19 @@
       <row>
        <entry>5.3.2</entry>
        <entry>
-        Added SHA-256 and SHA-512 crypt based on Ulrich Drepper's 
-        <link xlink:href="&url.crypt.sha;">implementation</link>.
+	    基于 Ulrich Drepper 的<link xlink:href="&url.crypt.sha;">实现</link>，新增基于 SHA-256 算法和 SHA-512 算法的 crypt。
        </entry>
       </row>
       <row>
        <entry>5.3.2</entry>
        <entry>
-        Fixed Blowfish behaviour on invalid rounds to return "failure" 
-        string ("*0" or "*1"), instead of falling back to DES.
+        修正了 Blowfish 算法由于非法循环导致的问题，返回“失败”字符串（“*0” 或 “*1”）而不是转而使用 DES 算法。
        </entry>
       </row>
       <row>
        <entry>5.3.0</entry>
        <entry>
-        PHP now contains its own implementation for the MD5 crypt, Standard DES,
-        Extended DES and the Blowfish algorithms and will use that if the system
-        lacks of support for one or more of the algorithms.
+	    PHP 现在包含了它自己的 MD5 Crypt 实现，包括标准 DES 算法，扩展的 DES 算法以及 Blowfish 算法。如果系统缺乏相应的实现，那么 PHP 将使用它自己的实现。
        </entry>
       </row>
      </tbody>
@@ -158,16 +135,13 @@
   &reftitle.examples;
   <para>
    <example>
-    <title><function>crypt</function> examples</title>
+    <title><function>crypt</function> 范例</title>
     <programlisting role="php">
 <![CDATA[
 <?php
-$password = crypt('mypassword'); // let the salt be automatically generated
+$password = crypt('mypassword'); // 自动生成盐值
 
-/* You should pass the entire results of crypt() as the salt for comparing a
-   password, to avoid problems when different hashing algorithms are used. (As
-   it says above, standard DES-based password hashing uses a 2-character salt,
-   but MD5-based hashing uses 12.) */
+/* 你应当使用 crypt() 得到的完整结果作为盐值进行密码校验，以此来避免使用不同散列算法导致的问题。（如上所述，基于标准 DES 算法的密码散列使用 2 字符盐值，但是基于 MD5 算法的散列使用 12 个字符盐值。）*/
 if (crypt($user_input, $password) == $password) {
    echo "Password verified!";
 }
@@ -178,14 +152,14 @@ if (crypt($user_input, $password) == $password) {
   </para>
   <para>
    <example>
-    <title>Using <function>crypt</function> with htpasswd</title>
+    <title>利用 htpasswd 进行 <function>crypt</function> 加密</title>
     <programlisting role="php">
 <![CDATA[
 <?php
-// Set the password
+// 设置密码
 $password = 'mypassword';
 
-// Get the hash, letting the salt be automatically generated
+// 获取散列值，使用自动盐值
 $hash = crypt($password);
 ?>
 ]]>
@@ -194,7 +168,7 @@ $hash = crypt($password);
   </para>
   <para>
    <example>
-    <title>Using <function>crypt</function> with different hash types</title>
+    <title>以不同散列类型使用 <function>crypt</function></title>
     <programlisting role="php">
 <![CDATA[
 <?php
@@ -243,8 +217,7 @@ SHA-512:      $6$rounds=5000$usesomesillystri$D4IrlXatmP7rx3P3InaxBeoomnAihCKRVQ
   &reftitle.notes;
   <note>
    <simpara>
-    There is no decrypt function, since <function>crypt</function> uses a
-    one-way algorithm.
+    由于 <function>crypt</function> 使用的是单向算法，因此不存在 decrypt 函数。
    </simpara>
   </note>
  </refsect1>
