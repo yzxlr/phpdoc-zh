@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision: 297028 $ -->
 <section xml:id="curl.installation" xmlns="http://docbook.org/ns/docbook">
  &reftitle.install;
  <para>
-  Ҫʹ��PHP��cURL֧��������ڱ���PHPʱ����<option role="configure">--with-curl[=DIR]</option>ѡ�DIRΪ����<filename>lib</filename>��<filename>include</filename>��Ŀ¼·������<filename>include</filename>Ŀ¼�б�����һ����Ϊ<filename>curl</filename>��������<filename>easy.h</filename>��<filename>curl.h</filename>���ļ��С�<filename>lib</filename>�ļ�����Ӧ����һ����Ϊ<filename>libcurl.a</filename>���ļ�������PHP 4.3.0���������<option role="configure">--with-curlwrappers</option>ʹcURLʹ��URL����
+  要使用PHP的cURL支持你必须在编译PHP时加上<option role="configure">--with-curl[=DIR]</option>选项，DIR为包含<filename>lib</filename>和<filename>include</filename>的目录路径。在<filename>include</filename>目录中必须有一个名为<filename>curl</filename>，包含了<filename>easy.h</filename>和<filename>curl.h</filename>的文件夹。<filename>lib</filename>文件夹里应该有一个名为<filename>libcurl.a</filename>的文件。对于PHP 4.3.0你可以配置<option role="configure">--with-curlwrappers</option>使cURL使用URL流。
  </para>
  <note>
-  <title>Win32�û�ע��</title>
+  <title>Win32用户注意</title>
   <simpara>
-  Ҫ��Windows������ʹ�����ģ�飬<filename>libeay32.dll</filename>��<filename>ssleay32.dll</filename>����ŵ�PATH��������������Ŀ¼�¡�
+  要在Windows环境下使用这个模块，<filename>libeay32.dll</filename>和<filename>ssleay32.dll</filename>必须放到PATH环境变量包含的目录下。
   </simpara>
   <simpara>
-  ����cURL��վ�ϵ�<filename>libcurl.dll</filename>��
+  不用cURL网站上的<filename>libcurl.dll</filename>。
   </simpara>
   </note>
 </section>
