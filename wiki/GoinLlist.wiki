@@ -45,4 +45,8 @@
  http://docs.php.net/manual/zh/reserved.exceptions.php
  http://docs.php.net/manual/zh/class.exception.php
  http://docs.php.net/manual/zh/class.errorexception.php
+
+ 逆雪寒(QQ:237852571/yehuiming0779)  2010-09-06 23:40
+ http://docs.php.net/manual/zh/book.imap.php
+ 
 }}}
