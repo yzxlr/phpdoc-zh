@@ -3,7 +3,7 @@
 <refentry xml:id="function.curl-multi-select" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>curl_multi_select</refname>
-  <refpurpose>等待所有cURL批处理中的活动连接 Wait for activity on any curl_multi connection</refpurpose>
+  <refpurpose>等待所有cURL批处理中的活动连接</refpurpose>
  </refnamediv>
  
  <refsect1 role="description">
