@@ -3,7 +3,7 @@
 <refentry xmlns="http://docbook.org/ns/docbook" xml:id="function.substr-compare">
  <refnamediv>
   <refname>substr_compare</refname>
-  <refpurpose>¶ş½øÖÆ°²È«±È½Ï×Ö·û´®£¨´ÓÆ«ÒÆÎ»ÖÃ±È½ÏÖ¸¶¨³¤¶È£©</refpurpose>
+  <refpurpose>äºŒè¿›åˆ¶å®‰å…¨æ¯”è¾ƒå­—ç¬¦ä¸²ï¼ˆä»åç§»ä½ç½®æ¯”è¾ƒæŒ‡å®šé•¿åº¦ï¼‰</refpurpose>
  </refnamediv>
  
  <refsect1 role="description">
@@ -17,7 +17,7 @@
    <methodparam choice="opt"><type>bool</type><parameter>case_insensitivity</parameter><initializer>false</initializer></methodparam>
   </methodsynopsis>
   <para>
-   <function>substr_compare</function> ´ÓÆ«ÒÆÎ»ÖÃ <parameter>offset</parameter> ¿ªÊ¼±È½Ï <parameter>main_str</parameter> Óë <parameter>str</parameter>£¬±È½Ï³¤¶ÈÎª <parameter>length</parameter> ¸ö×Ö·û¡£
+   <function>substr_compare</function> ä»åç§»ä½ç½® <parameter>offset</parameter> å¼€å§‹æ¯”è¾ƒ <parameter>main_str</parameter> ä¸ <parameter>str</parameter>ï¼Œæ¯”è¾ƒé•¿åº¦ä¸º <parameter>length</parameter> ä¸ªå­—ç¬¦ã€‚
   </para>
  </refsect1>
 
@@ -29,7 +29,7 @@
      <term><parameter>main_str</parameter></term>
      <listitem>
       <para>
-       ´ı±È½ÏµÄµÚÒ»¸ö×Ö·û´®¡£
+       å¾…æ¯”è¾ƒçš„ç¬¬ä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
       </para>
      </listitem>
     </varlistentry>
@@ -37,7 +37,7 @@
      <term><parameter>str</parameter></term>
      <listitem>
       <para>
-       ´ı±È½ÏµÄµÚ¶ş¸ö×Ö·û´®¡£
+       å¾…æ¯”è¾ƒçš„ç¬¬äºŒä¸ªå­—ç¬¦ä¸²ã€‚
       </para>
      </listitem>
     </varlistentry>
@@ -45,7 +45,7 @@
      <term><parameter>offset</parameter></term>
      <listitem>
       <para>
-       ±È½Ï¿ªÊ¼µÄÎ»ÖÃ¡£Èç¹ûÎª¸ºÊı£¬Ôò´Ó×Ö·û´®½áÎ²´¦¿ªÊ¼ËãÆğ¡£
+       æ¯”è¾ƒå¼€å§‹çš„ä½ç½®ã€‚å¦‚æœä¸ºè´Ÿæ•°ï¼Œåˆ™ä»å­—ç¬¦ä¸²ç»“å°¾å¤„å¼€å§‹ç®—èµ·ã€‚
       </para>
      </listitem>
     </varlistentry>
@@ -53,7 +53,7 @@
      <term><parameter>length</parameter></term>
      <listitem>
       <para>
-	   ±È½ÏµÄ³¤¶È¡£Ä¬ÈÏÖµÎª <parameter>str</parameter> µÄ³¤¶ÈÓë <parameter>main_str</parameter> µÄ³¤¶È¼õÈ¥Î»ÖÃÆ«ÒÆÁ¿ <parameter>offset</parameter> ºó¶şÕßÖĞµÄ½Ï´óÕß¡£
+	   æ¯”è¾ƒçš„é•¿åº¦ã€‚é»˜è®¤å€¼ä¸º <parameter>str</parameter> çš„é•¿åº¦ä¸ <parameter>main_str</parameter> çš„é•¿åº¦å‡å»ä½ç½®åç§»é‡ <parameter>offset</parameter> åäºŒè€…ä¸­çš„è¾ƒå¤§è€…ã€‚
       </para>
      </listitem>
     </varlistentry>
@@ -61,7 +61,7 @@
      <term><parameter>case_insensitivity</parameter></term>
      <listitem>
       <para>
-	   Èç¹û <parameter>case_insensitivity</parameter> Îª &true;£¬±È½Ï½«²»Çø·Ö´óĞ¡Ğ´¡£
+	   å¦‚æœ <parameter>case_insensitivity</parameter> ä¸º &true;ï¼Œæ¯”è¾ƒå°†ä¸åŒºåˆ†å¤§å°å†™ã€‚
       </para>
      </listitem>
     </varlistentry>
@@ -72,7 +72,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   Èç¹û <parameter>main_str</parameter> ´ÓÆ«ÒÆÎ»ÖÃ <parameter>offset</parameter> ÆğµÄ×Ó×Ö·û´®Ğ¡ÓÚ <parameter>str</parameter>£¬Ôò·µ»ØĞ¡ÓÚ 0 µÄÊı£»Èç¹û´óÓÚ <parameter>str</parameter>£¬Ôò·µ»Ø´óÓÚ 0 µÄÊı£»Èç¹û¶şÕßÏàµÈ£¬Ôò·µ»Ø 0¡£Èç¹û <parameter>offset</parameter> ´óÓÚµÈÓÚ <parameter>main_str</parameter> µÄ³¤¶È»ò <parameter>length</parameter> ±»ÉèÖÃÎªĞ¡ÓÚ 1 µÄÖµ£¬<function>substr_compare</function> ½«´òÓ¡³öÒ»Ìõ¾¯¸æĞÅÏ¢²¢ÇÒ·µ»Ø &false;¡£
+   å¦‚æœ <parameter>main_str</parameter> ä»åç§»ä½ç½® <parameter>offset</parameter> èµ·çš„å­å­—ç¬¦ä¸²å°äº <parameter>str</parameter>ï¼Œåˆ™è¿”å›å°äº 0 çš„æ•°ï¼›å¦‚æœå¤§äº <parameter>str</parameter>ï¼Œåˆ™è¿”å›å¤§äº 0 çš„æ•°ï¼›å¦‚æœäºŒè€…ç›¸ç­‰ï¼Œåˆ™è¿”å› 0ã€‚å¦‚æœ <parameter>offset</parameter> å¤§äºç­‰äº <parameter>main_str</parameter> çš„é•¿åº¦æˆ– <parameter>length</parameter> è¢«è®¾ç½®ä¸ºå°äº 1 çš„å€¼ï¼Œ<function>substr_compare</function> å°†æ‰“å°å‡ºä¸€æ¡è­¦å‘Šä¿¡æ¯å¹¶ä¸”è¿”å› &false;ã€‚
   </para>
  </refsect1>
 
@@ -91,7 +91,7 @@
       <row>
        <entry>5.1.0</entry>
        <entry>
-        ÔÊĞíÊ¹ÓÃ¸ºÊıµÄ <parameter>offset</parameter> ²ÎÊı¡£
+        å…è®¸ä½¿ç”¨è´Ÿæ•°çš„ <parameter>offset</parameter> å‚æ•°ã€‚
        </entry>
       </row>
      </tbody>
@@ -104,7 +104,7 @@
   &reftitle.examples;
   <para>
    <example>
-    <title><function>substr_compare</function> ·¶Àı</title>
+    <title><function>substr_compare</function> èŒƒä¾‹</title>
     <programlisting role="php">
 <![CDATA[
 <?php
