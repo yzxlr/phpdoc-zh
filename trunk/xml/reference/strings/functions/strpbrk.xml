@@ -3,7 +3,7 @@
 <refentry xmlns="http://docbook.org/ns/docbook" xml:id="function.strpbrk">
  <refnamediv>
   <refname>strpbrk</refname>
-  <refpurpose>ÔÚ×Ö·û´®ÖĞ²éÕÒÒ»×é×Ö·ûµÄÈÎºÎÒ»¸ö×Ö·û</refpurpose>
+  <refpurpose>åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾ä¸€ç»„å­—ç¬¦çš„ä»»ä½•ä¸€ä¸ªå­—ç¬¦</refpurpose>
  </refnamediv>
  
  <refsect1 role="description">
@@ -14,7 +14,7 @@
    <methodparam><type>string</type><parameter>char_list</parameter></methodparam>
   </methodsynopsis>
   <para>
-   <function>strpbrk</function> º¯ÊıÔÚ <parameter>haystack</parameter> ×Ö·û´®ÖĞ²éÕÒ <parameter>char_list</parameter> ÖĞµÄ×Ö·û¡£
+   <function>strpbrk</function> å‡½æ•°åœ¨ <parameter>haystack</parameter> å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾ <parameter>char_list</parameter> ä¸­çš„å­—ç¬¦ã€‚
   </para>
  </refsect1>
 
@@ -26,7 +26,7 @@
      <term><parameter>haystack</parameter></term>
      <listitem>
       <para>
-       ÔÚ´Ë×Ö·û´®ÖĞ²éÕÒ <parameter>char_list</parameter>¡£
+       åœ¨æ­¤å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾ <parameter>char_list</parameter>ã€‚
       </para>
      </listitem>
     </varlistentry>
@@ -34,7 +34,7 @@
      <term><parameter>char_list</parameter></term>
      <listitem>
       <para>
-       ¸Ã²ÎÊıÇø·Ö´óĞ¡Ğ´¡£
+       è¯¥å‚æ•°åŒºåˆ†å¤§å°å†™ã€‚
       </para>
      </listitem>
     </varlistentry>
@@ -45,7 +45,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   ·µ»ØÒ»¸öÒÔÕÒµ½µÄ×Ö·û¿ªÊ¼µÄ×Ó×Ö·û´®¡£Èç¹ûÃ»ÓĞÕÒµ½£¬Ôò·µ»Ø &false;¡£
+   è¿”å›ä¸€ä¸ªä»¥æ‰¾åˆ°çš„å­—ç¬¦å¼€å§‹çš„å­å­—ç¬¦ä¸²ã€‚å¦‚æœæ²¡æœ‰æ‰¾åˆ°ï¼Œåˆ™è¿”å› &false;ã€‚
   </para>
  </refsect1>
 
@@ -53,17 +53,17 @@
   &reftitle.examples;
   <para>
    <example>
-    <title><function>strpbrk</function> ·¶Àı</title>
+    <title><function>strpbrk</function> èŒƒä¾‹</title>
     <programlisting role="php">
 <![CDATA[
 <?php
 
 $text = 'This is a Simple text.';
 
-// Êä³ö "is is a Simple text."£¬ÒòÎª 'i' ÏÈ±»Æ¥Åä
+// è¾“å‡º "is is a Simple text."ï¼Œå› ä¸º 'i' å…ˆè¢«åŒ¹é…
 echo strpbrk($text, 'mi');
 
-// Êä³ö "Simple text."£¬ÒòÎª×Ö·ûÇø·Ö´óĞ¡Ğ´
+// è¾“å‡º "Simple text."ï¼Œå› ä¸ºå­—ç¬¦åŒºåˆ†å¤§å°å†™
 echo strpbrk($text, 'S');
 ?>
 ]]>
