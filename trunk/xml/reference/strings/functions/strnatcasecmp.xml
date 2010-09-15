@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision: 297028 $ -->
-<refentry xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook" xml:id="function.strnatcmp">
+<refentry xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook" xml:id="function.strnatcasecmp">
  <refnamediv>
-  <refname>strnatcmp</refname>
-  <refpurpose>			</refpurpose>
+  <refname>strnatcasecmp</refname>
+  <refpurpose>使用“自然顺序”算法比较字符串（不区分大小写）</refpurpose>
  </refnamediv>
  
  <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-   <type>int</type><methodname>strnatcmp</methodname>
+   <type>int</type><methodname>strnatcasecmp</methodname>
    <methodparam><type>string</type><parameter>str1</parameter></methodparam>
    <methodparam><type>string</type><parameter>str2</parameter></methodparam>
   </methodsynopsis>
   <para>
-   该函数实现了以人类习惯对数字型字符串进行排序的比较算法，这就是“自然顺序”。注意该比较区分大小写。
+   该函数实现了以人类习惯对数字型字符串进行排序的比较算法。除了不区分大小写，该函数的行为与 <function>strnatcmp</function> 类似。更多信息，参见：Martin Pool 的<link xlink:href="&url.strnatcmp;">自然顺序的字符串比较</link>页面。
   </para>
  </refsect1>
 
@@ -49,68 +49,19 @@
   </para>
  </refsect1>
 
- <refsect1 role="examples">
-  &reftitle.examples;
-  <para>
-   下面的例子展示了该算法与计算机常规字符串比较算法（<function>strcmp</function>中使用的）的区别：
-   <informalexample>
-    <programlisting role="php">
-<![CDATA[
-<?php
-$arr1 = $arr2 = array("img12.png", "img10.png", "img2.png", "img1.png");
-echo "Standard string comparison\n";
-usort($arr1, "strcmp");
-print_r($arr1);
-echo "\nNatural order string comparison\n";
-usort($arr2, "strnatcmp");
-print_r($arr2);
-?>
-]]>
-    </programlisting>
-    &example.outputs;
-    <screen>
-<![CDATA[
-Standard string comparison
-Array
-(
-    [0] => img1.png
-    [1] => img10.png
-    [2] => img12.png
-    [3] => img2.png
-)
-
-Natural order string comparison
-Array
-(
-    [0] => img1.png
-    [1] => img2.png
-    [2] => img10.png
-    [3] => img12.png
-)
-]]>
-    </screen>
-   </informalexample>
-   更多信息，参见：Martin Pool 的<link
-   xlink:href="&url.strnatcmp;">自然顺序的字符串比较</link>
-   page.
-  </para>
- </refsect1>
-
  <refsect1 role="seealso">
   &reftitle.seealso;
   <para>
    <simplelist>
     <member><function>preg_match</function></member>
+    <member><function>strcmp</function></member>
     <member><function>strcasecmp</function></member>
     <member><function>substr</function></member>
     <member><function>stristr</function></member>
-    <member><function>strcmp</function></member>
-    <member><function>strncmp</function></member>
     <member><function>strncasecmp</function></member>
-    <member><function>strnatcasecmp</function></member>
+    <member><function>strncmp</function></member>
     <member><function>strstr</function></member>
-    <member><function>natsort</function></member>
-    <member><function>natcasesort</function></member>
+    <member><function>setlocale</function></member>
    </simplelist>
   </para>
  </refsect1>
