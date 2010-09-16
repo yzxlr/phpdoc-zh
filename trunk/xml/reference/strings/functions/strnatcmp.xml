@@ -3,7 +3,7 @@
 <refentry xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook" xml:id="function.strnatcmp">
  <refnamediv>
   <refname>strnatcmp</refname>
-  <refpurpose>			</refpurpose>
+  <refpurpose>使用自然排序算法比较字符串</refpurpose>
  </refnamediv>
  
  <refsect1 role="description">
@@ -52,7 +52,7 @@
  <refsect1 role="examples">
   &reftitle.examples;
   <para>
-   下面的例子展示了该算法与计算机常规字符串比较算法（<function>strcmp</function>中使用的）的区别：
+   下面的例子展示了该算法与计算机常规字符串比较算法（ <function>strcmp</function> 所使用的）的区别：
    <informalexample>
     <programlisting role="php">
 <![CDATA[
