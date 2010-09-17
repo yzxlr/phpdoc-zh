@@ -64,6 +64,7 @@
 
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
+  <para>
    返回一个包含读取到的字段的索引数组。
   </para>
  </refsect1>
