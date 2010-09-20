@@ -27,11 +27,11 @@ pdo_SKEL/
   <para>稍后在本文档中阐述这些文件的内容。</para>
  </sect2>
  <sect2 xml:id="internals2.pdo.preparation.create-skel">
-  <title>创建模块框架</title>
+  <title>创建一个基本框架</title>
 
   <para>
    最简单的方法就是使用 PHP 目录树中的 <filename>ext</filename> 目录下的 <command>ext_skel</command>
-    Shell 脚本。这将生成包含很多上面列出的文件的框架目录。通过执行下面命令来完成:
+    Shell 脚本。这将生成包含很多上面列出的文件的基本框架目录。通过执行下面命令来完成:
   </para>
   <screen>
 <![CDATA[
@@ -39,7 +39,7 @@ pdo_SKEL/
 ]]>
   </screen>
   <para>
-   这将生成一个名为pdo_SKEL包含框架文件的目录，目录名称可以自定义。该目录可以移动到PHP扩展目录之外。PDO 是 PECL 的一个扩展，不应该包括在标准扩展目录中。只要你有过PHP和PDO的安装，你就会想到从其它目录创建。
+   这将生成一个名为pdo_SKEL包含基本框架文件的目录，目录名称可以自定义。该目录可以移动到PHP扩展目录之外。PDO 是 PECL 的一个扩展，不应该包括在标准扩展目录中。只要你有过PHP和PDO的安装，你就会想到从其它目录创建。
   </para>
  </sect2>
  <sect2 xml:id="internals2.pdo.preparation.std-includes">
