@@ -54,6 +54,7 @@
 
  风之紫(QQ:674763853/wind.golden) 2010-09-19 13:10:50
  http://docs.php.net/manual/zh/features.gc.php
+ http://docs.php.net/manual/zh/internals2.ze1.zendapi.php
 
  kendo tom(/kendotom) 2010-10-02 18:10:57
  http://docs.php.net/manual/zh/language.oop5.properties.php
