@@ -68,4 +68,5 @@
 
  selfimpr(QQ:285821471/lgg860911) 2010-10-03 18:47:06
  http://docs.php.net/manual/zh/book.pcntl.php
+ http://docs.php.net/manual/zh/book.memcache.php
 }}}
