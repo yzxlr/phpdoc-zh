@@ -3,7 +3,7 @@
 <refentry xml:id="memcache.getstats" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>Memcache::getStats</refname>
-  <refpurpose>获取服务器统计信息<</refpurpose>
+  <refpurpose>获取服务器统计信息</refpurpose>
  </refnamediv>
 
  <refsect1 role="description">
