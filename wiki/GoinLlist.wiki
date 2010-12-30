@@ -31,7 +31,7 @@
  http://docs.php.net/manual/zh/language.variables.superglobals.php（提交）
  http://docs.php.net/manual/zh/reserved.interfaces.php（提交）
  http://docs.php.net/manual/zh/book.strings.php
-
+ http://docs.php.net/manual/zh/migration53.php
 
  ligang wang(/paris.wang/suppersoft) 2010-08-27 13:52
  http://docs.php.net/manual/zh/features.gc.refcounting-basics.php （预计两周）
