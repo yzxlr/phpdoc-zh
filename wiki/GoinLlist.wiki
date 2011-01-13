@@ -69,7 +69,8 @@
  selfimpr(QQ:285821471/lgg860911) 2010-10-03 18:47:06
  http://docs.php.net/manual/zh/book.pcntl.php
  http://docs.php.net/manual/zh/book.memcache.php
- http://docs.php.net/manual/zh/book.memcached.php 
+ http://docs.php.net/manual/zh/book.memcached.php
+ http://docs.php.net/manual/en/book.mysqli.php
 
  Brooks(QQ:33482898/kaixin110) 2010-11-2 12:11:06
  http://docs.php.net/manual/zh/context.php
