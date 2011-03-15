@@ -74,4 +74,23 @@
 
  Brooks(QQ:33482898/kaixin110) 2010-11-2 12:11:06
  http://docs.php.net/manual/zh/context.php
+
+ 于和高(hk.yuhe) 2011-03-07
+ http://docs.php.net/manual/zh/wrappers.php
+ http://docs.php.net/manual/zh/wrappers.file.php
+ http://docs.php.net/manual/zh/wrappers.http.php
+ http://docs.php.net/manual/zh/wrappers.ftp.php
+ http://docs.php.net/manual/zh/wrappers.php.php
+ http://docs.php.net/manual/zh/wrappers.compression.php
+ http://docs.php.net/manual/zh/wrappers.data.php
+ http://docs.php.net/manual/zh/wrappers.glob.php
+ http://docs.php.net/manual/zh/wrappers.phar.php
+ http://docs.php.net/manual/zh/wrappers.ssh2.php
+ http://docs.php.net/manual/zh/wrappers.rar.php
+ http://docs.php.net/manual/zh/wrappers.audio.php
+ http://docs.php.net/manual/zh/wrappers.expect.php
+
+ Kennedy(kennedy.ye) 2011-03-11
+ http://www.php.net/manual/zh/function.session-unset.php
+
 }}}
