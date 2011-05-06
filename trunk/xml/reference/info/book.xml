@@ -4,14 +4,14 @@
 <!-- Membership: core -->
 
 <book xml:id="book.info" xmlns="http://docbook.org/ns/docbook">
- <title>PHP Ñ¡ÏîºÍÐÅÏ¢</title>
- <titleabbrev>PHP Ñ¡Ïî/ÐÅÏ¢</titleabbrev>
+ <title>PHP é€‰é¡¹å’Œä¿¡æ¯</title>
+ <titleabbrev>PHP é€‰é¡¹/ä¿¡æ¯</titleabbrev>
 
  <preface xml:id="intro.info">
   &reftitle.intro;
   <para>
-ÕâÐ©º¯ÊýÔÊÐíÄã»ñµÃÐí¶à¹ØÓÚPHP±¾ÉíµÄ²ÎÊý£¬ÀýÈç£ºÔËÐÐÊ±µÄÅäÖÃ£¬±»¼ÓÔØµÄÀ©Õ¹£¬°æ±¾µÈ¡£
-ÄãÒ²½«ÕÒµ½ÉèÖÃÄãµÄÔËÐÐÖÐµÄPHPµÄÑ¡ÏîµÄº¯Êý¡£¿ÉÄÜ×îºÃÓÃµÄ PHP- º¯Êý <function>phpinfo</function> ¿ÉÒÔÔÚÕâÀïÕÒµ½¡£
+è¿™äº›å‡½æ•°å…è®¸ä½ èŽ·å¾—è®¸å¤šå…³äºŽPHPæœ¬èº«çš„å‚æ•°ï¼Œä¾‹å¦‚ï¼šè¿è¡Œæ—¶çš„é…ç½®ï¼Œè¢«åŠ è½½çš„æ‰©å±•ï¼Œç‰ˆæœ¬ç­‰ã€‚
+ä½ ä¹Ÿå°†æ‰¾åˆ°è®¾ç½®ä½ çš„è¿è¡Œä¸­çš„PHPçš„é€‰é¡¹çš„å‡½æ•°ã€‚å¯èƒ½æœ€å¥½ç”¨çš„ PHP- å‡½æ•° <function>phpinfo</function> å¯ä»¥åœ¨è¿™é‡Œæ‰¾åˆ°ã€‚
   </para>
  </preface>
  

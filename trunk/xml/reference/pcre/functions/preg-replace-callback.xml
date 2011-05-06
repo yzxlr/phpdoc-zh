@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision: 307739 $ -->
+<!-- $Revision: 309974 $ -->
 <refentry xml:id="function.preg-replace-callback" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>preg_replace_callback</refname>
