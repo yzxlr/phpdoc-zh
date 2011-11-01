@@ -4,10 +4,10 @@
 <appendix xml:id="outcontrol.examples" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
   &reftitle.examples;
   <section xml:id="outcontrol.examples.basic">
-  <title>Basic usage</title>
+  <title>基本用法</title>
   <para>
    <example>
-    <title>Output Control example</title>
+    <title>输出控制举例</title>
     <programlisting role="php">
 <![CDATA[
 <?php
