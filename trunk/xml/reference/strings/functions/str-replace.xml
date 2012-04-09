@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision: 297028 $ -->
+<!-- $Revision: 318874 $ -->
 <refentry xmlns="http://docbook.org/ns/docbook" xml:id="function.str-replace">
  <refnamediv>
   <refname>str_replace</refname>
@@ -65,7 +65,7 @@
      <listitem>
       <note>
        <simpara>
-		如果被指定，它将控制匹配和替换的次数。
+		如果被指定，它的值将被设置为替换发生的次数。
        </simpara>
       </note>
      </listitem>

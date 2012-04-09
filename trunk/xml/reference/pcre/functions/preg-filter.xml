@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision: 307739 $ -->
+<!-- $Revision: 318648 $ -->
 <refentry xml:id="function.preg-filter" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>preg_filter</refname>
-  <refpurpose>之行一个正则表达式搜索和替换</refpurpose>
+  <refpurpose>执行一个正则表达式搜索和替换</refpurpose>
  </refnamediv>
 
  <refsect1 role="description">

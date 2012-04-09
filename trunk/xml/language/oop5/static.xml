@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision: 304246 $ -->
-<!-- $Author: honestqiao $ -->
+<!-- $Revision: 314029 $ -->
+<!-- $Author: rquadling $ -->
 <!-- EN-Revision: 283798 Maintainer: Haohappy Status: ready -->
  <sect1 xml:id="language.oop5.static" xmlns="http://docbook.org/ns/docbook">
   <title>Static关键字</title>
@@ -107,7 +107,7 @@ sgml-indent-step:1
 sgml-indent-data:t
 indent-tabs-mode:nil
 sgml-parent-document:nil
-sgml-default-dtd-file:"../../manual.ced"
+sgml-default-dtd-file:"~/.phpdoc/manual.ced"
 sgml-exposed-tags:nil
 sgml-local-catalogs:nil
 sgml-local-ecat-files:nil

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision: 302183 $ -->
+<!-- $Revision: 317668 $ -->
 <refentry xml:id="function.mysqli-report" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>mysqli_report</refname>
@@ -28,7 +28,7 @@
       <para>
        <table>
         <title>支持的flags</title>
-        <tgroup cols='2'>
+        <tgroup cols="2">
          <thead>
           <row>
            <entry>名称</entry>

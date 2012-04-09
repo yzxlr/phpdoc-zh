@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision: 309974 $ -->
+<!-- $Revision: 317515 $ -->
 <refentry xml:id="function.preg-replace-callback" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>preg_replace_callback</refname>
@@ -151,7 +151,7 @@ fclose($fp);
   <para>
    <example>
     <title><function>preg_replace_callback</function>示例</title>
-    <programlisting role='php'>
+    <programlisting role="php">
 <![CDATA[
 <?php
 // 将文本中的年份增加一年.

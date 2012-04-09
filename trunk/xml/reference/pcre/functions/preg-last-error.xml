@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision: 297028 $ -->
+<!-- $Revision: 318648 $ -->
 <refentry xml:id="function.preg-last-error" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>preg_last_error</refname>
@@ -13,7 +13,7 @@
    <void />
   </methodsynopsis>
   <para>
-   返回最后一次PCRE正则之行的错误代码.
+   返回最后一次PCRE正则执行的错误代码.
   </para>
   <para>
    <example>

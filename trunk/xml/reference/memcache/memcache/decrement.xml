@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision$ -->
+<!-- $Revision: 324974 $ -->
+<!-- EN-Revision: 299490 Maintainer: HonestQiao Status: ready -->
+<!-- Reviewed: no Maintainer: HonestQiao -->
 <refentry xml:id="memcache.decrement" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>Memcache::decrement</refname>
@@ -61,7 +63,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   成功的时候返回元素的新值，失败的时候返回false。
+   成功的时候返回元素的新值&return.falseforfailure;
   </para>
  </refsect1>
 
