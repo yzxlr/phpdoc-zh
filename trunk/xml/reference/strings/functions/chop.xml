@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Revision: 324974 $ -->
-<!-- EN-Revision: 297028 Maintainer: HonestQiao Status: ready -->
-<!-- Reviewed: no Maintainer: HonestQiao -->
-<refentry xml:id="function.chop" xmlns="http://docbook.org/ns/docbook">
+<!-- $Revision: 297028 $ -->
+<refentry xmlns="http://docbook.org/ns/docbook" xml:id="function.chop">
  <refnamediv>
   <refname>chop</refname>
-  <refpurpose><function>rtrim</function> 的&Alias;</refpurpose>
+  <refpurpose>&Alias; <function>rtrim</function></refpurpose>
  </refnamediv>
- <refsect1 role="description">
+
+  <refsect1 role="description">
   &reftitle.description;
   <simpara>
-   &info.function.alias;<function>rtrim</function>。
+   &info.function.alias;
+   <function>rtrim</function>.
   </simpara>
-  <note>
-   <para>
-    <function>chop</function> 与 Perl 的
-    <literal>chop()</literal> 函数有所不同，它会删除字符串的最后一个字符。
-   </para>
-  </note>
  </refsect1>
 
- <refsect1 role="notes">
+  <refsect1 role="notes">
   &reftitle.notes;
   <note>
    <para>
-    <function>chop</function> is different than the Perl
-    <literal>chop()</literal> function, which removes the last
-    character in the string.
+    <function>chop</function> 与 Perl里只会删除字符串的最后一个字符的
+    <literal>chop()</literal> 函数有所不同。
    </para>
   </note>
  </refsect1>
