@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Revision: 298957 $ -->
+<refentry xml:id="function.phpversion" xmlns="http://docbook.org/ns/docbook">
+ <refnamediv>
+  <refname>phpversion</refname>
+  <refpurpose>获取当前PHP的版本</refpurpose>
+ </refnamediv>
+ 
+ <refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+   <type>string</type><methodname>phpversion</methodname>
+   <methodparam choice="opt"><type>string</type><parameter>extension</parameter></methodparam>
+  </methodsynopsis>
+  <para>
+   返回当前运行的PHP解析器或者扩展的版本字符串。
+  </para>
+ </refsect1>
+
+ <refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+   <variablelist>
+    <varlistentry>
+     <term><parameter>extension</parameter></term>
+     <listitem>
+      <para>
+       可选的扩展名称。
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+  </para>
+ </refsect1>
+
+ <refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+   如果指定了可选的 <parameter>extension</parameter>参数，<function>phpversion</function> 会返回该扩展的版本。如果扩展未启用，或者无相关的版本信息则会返回 &false;。
+  </para>
+ </refsect1>
+
+ <refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+   <example>
+    <title><function>phpversion</function> 示例</title>
+    <programlisting role="php">
+<![CDATA[
+<?php
+// 打印输出类似 'Current PHP version: 4.1.1'
+echo 'Current PHP version: ' . phpversion();
+
+// 打印输出类似 '2.0'，如果扩展未启用则什么都不会显示
+echo phpversion('tidy');
+?>
+]]>
+    </programlisting>
+   </example>
+  </para>
+  <para>
+   <example>
+    <title><constant>PHP_VERSION_ID</constant> 示例与用法</title>
+    <programlisting role="php">
+<![CDATA[
+<?php
+// PHP_VERSION_ID自PHP 5.2.7有效，如果我们的版本, if our 
+// 较低，则模拟这个常量
+if (!defined('PHP_VERSION_ID')) {
+    $version = explode('.', PHP_VERSION);
+
+    define('PHP_VERSION_ID', ($version[0] * 10000 + $version[1] * 100 + $version[2]));
+}
+
+// PHP_VERSION_ID 定义为一个数字，版本越是新的PHP，数字越大。
+// 它用以下的表达式来定义的：
+//
+// $version_id = $major_version * 10000 + $minor_version * 100 + $release_version;
+//
+// 现在我们可以用 PHP_VERSION_ID 来检查该PHP版本可能具有的功能
+// 使得不需要每次都用 version_compare() 来检查当前PHP版本是否支持一个功能
+//
+// 举例，在版本5.2.7之前我们可以自己定义 PHP_VERSION_* 常量。
+
+if (PHP_VERSION_ID < 50207) {
+    define('PHP_MAJOR_VERSION',   $version[0]);
+    define('PHP_MINOR_VERSION',   $version[1]);
+    define('PHP_RELEASE_VERSION', $version[2]);
+
+    // 等等……
+}
+?>
+]]>
+    </programlisting>
+   </example>
+  </para>
+ </refsect1>
+
+ <refsect1 role="notes">
+  &reftitle.notes;
+  <note>
+   <para>
+    本信息在预定义常量 <constant>PHP_VERSION</constant> 中同样有效。更多的版本信息可以通过 <constant>PHP_VERSION_*</constant> 系列常量获取。
+   </para>
+  </note>
+ </refsect1>
+
+ <refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+   <simplelist>
+    <member><link linkend="reserved.constants.core">PHP_VERSION constants</link></member>
+    <member><function>version_compare</function></member>
+    <member><function>phpinfo</function></member>
+    <member><function>phpcredits</function></member>
+    <member><function>php_logo_guid</function></member>
+    <member><function>zend_version</function></member>
+   </simplelist>
+  </para>
+ </refsect1>
+
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:1
+sgml-indent-data:t
+indent-tabs-mode:nil
+sgml-parent-document:nil
+sgml-default-dtd-file:"~/.phpdoc/manual.ced"
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+vim600: syn=xml fen fdm=syntax fdl=2 si
+vim: et tw=78 syn=sgml
+vi: ts=1 sw=1
+-->
